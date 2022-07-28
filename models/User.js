@@ -17,11 +17,15 @@ const userSchema = mongoose.Schema({
         type: Number,
         default: 0
     },
+    role: { // 관리자 설정
+        type: Number, // 예) number가 1이면 관리자, 2면 유저
+        default: 0 // 임의로 role을 지정하지 않으면 0을 주겠다
+    },
     image: String,
-    token: {
+    token: { // token을 이용한 유효성 관리가능
         type: String,
     },
-    tokenExp: {
+    tokenExp: { // token을 사용할 수 있는 기간
         type: Number
     }
 })
